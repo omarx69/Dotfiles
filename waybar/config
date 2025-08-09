@@ -1,0 +1,118 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "height": 32,
+    "modules-left": [
+        "custom/logo",
+        "sway/workspaces"  // Changed from hyprland/workspaces
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "tray",
+        "cpu",
+        "memory",
+        "custom/diskfree",
+	"network",
+        "clock",
+        "pulseaudio",      // Changed from wireplumber (use `pulseaudio` for Sway)
+        "custom/power"
+    ],
+
+    // Sway-specific modules
+    "sway/workspaces": {   // Replaced hyprland/workspaces
+        "on-click": "activate",
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "default": "",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": ""
+        },
+        "persistent_workspaces": {
+            "1": [], "2": [], "3": [], "4": [], "5": [],
+            "6": [], "7": [], "8": [], "9": []
+        }
+    },
+
+    // System monitors
+    "cpu": {
+        "format": "  Cpu: {usage}%",
+        "tooltip": false,
+        "interval": 5
+    },
+    "memory": {
+        "interval": 5,
+        "format": "󰍛  Mem: {}%",
+        "max-length": 15
+    },
+
+    // Clock
+    "clock": {
+        "tooltip-format": "{calendar}",
+        "format-alt": " {:%a, %b %d %Y}",
+        "format": "⏱ {:%a, %b %d - %I:%M %p}",
+        "interval": 60
+    },
+
+    // Network (Sway-compatible)
+    "network": {
+        "format-wifi": "{icon}",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format-ethernet": "󰀂",
+        "format-alt": "󱛇",
+        "format-disconnected": "󰖪",
+        "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "󰀂 {ifname}\n⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "~/.config/rofi/wifi/wifi.sh",
+        "interval": 5
+    },
+
+    // Audio (use `pulseaudio` instead of `wireplumber`)
+    "pulseaudio": {
+        "format": "{icon}   {volume}%",
+        "format-bluetooth": "󰂰 {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "default": ["󰖀", "󰕾", ""]
+        },
+        "on-click": "pamixer -t",
+        "scroll-step": 1
+    },
+
+    // Custom modules
+    "custom/logo": {
+        "format": "  ",
+        "tooltip": false,
+       // "on-click": "~/.config/rofi/launchers/misc/launcher.sh"
+        "on-click": "~/.config/rofi/launchers/type-1/launcher.sh"
+    },
+    "custom/kernel": {
+        "format": "❤ {}",
+        "interval": 3600,
+        "exec": "uname -r | cut -d'-' -f1"  // Simplified kernel version
+    },
+    "custom/diskfree": {
+        "format": "🖴 Disk: {}",
+        "interval": 300,
+        "exec": "df -h / | awk 'NR==2 {print $5}'"  // More reliable disk usage
+    },
+    "custom/power": {
+        "format": "󰤆",
+        "on-click": "~/.config/rofi/powermenu/type-1/powermenu.sh",  // Rofi Powermenu
+        "tooltip": false
+    },
+
+    // Tray (Sway-compatible)
+    "tray": {
+        "spacing": 10,
+        "icon-size": 16
+    }
+}

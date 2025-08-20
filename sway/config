@@ -155,3 +155,9 @@ client.background        $base
 
 include /etc/sway/config.d/*
 
+blur enable
+blur_xray disable
+blur_passes 3
+blur_radius 2
+corner_radius 10
+shadows enable

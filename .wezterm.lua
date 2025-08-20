@@ -1,8 +1,8 @@
 local wezterm = require("wezterm")
 
 return {
-	-- 95% opacity
-	window_background_opacity = 0.95,
+	-- 85% opacity
+	window_background_opacity = 0.85,
 
 	-- Catppuccin Mocha theme (you can change Mocha to Latte, Frappe, or Macchiato)
 	color_scheme = "Catppuccin Mocha",

@@ -114,6 +114,9 @@ bindsym $mod+r mode "resize"
 # Status Bar
 exec --no-startup-id waybar
 
+# Enable autotiling "you must install it yourself"
+exec_always --no-startup-id autotiling 
+
 ### Gaps configuration (persistent only)
 gaps inner 10
 gaps outer 5

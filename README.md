@@ -9,14 +9,14 @@ ______________________________________________
 
 # Programmes that I use
 
-wezterm
-swayfx
-neovim
-zellij
-dunst
-sddm "will be added"
-waybar
-rofi-wayland
-bat
+wezterm\
+swayfx\
+neovim\
+zellij\
+dunst\
+sddm "will be added"\
+waybar\
+rofi-wayland\
+bat\
 fzf
 fish

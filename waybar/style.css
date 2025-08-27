@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-  background-color: #45475a;
+  background-color: #313244;
   transition-property: background-color;
   transition-duration: 0.5s;
   color: #ffffff; /* Default text color for all modules */
